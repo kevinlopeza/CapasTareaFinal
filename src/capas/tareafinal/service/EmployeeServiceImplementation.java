@@ -18,19 +18,19 @@ public class EmployeeServiceImplementation implements EmployeeService{
 	@Override
 	public List<Employee> findAll() throws DataAccessException {
 		// TODO Auto-generated method stub
-		return null;
+		return eRepo.findAll();
 	}
 
 	@Override
 	public Employee findOne(Integer code) throws DataAccessException {
 		// TODO Auto-generated method stub
-		return null;
+		return eRepo.findById(code).get();
 	}
 
 	@Override
 	public Employee save(Employee e) throws DataAccessException {
 		// TODO Auto-generated method stub
-		return null;
+		return eRepo.save(e);
 	}
 
 }

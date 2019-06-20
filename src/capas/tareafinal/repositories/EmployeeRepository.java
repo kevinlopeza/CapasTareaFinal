@@ -6,4 +6,4 @@ import capas.tareafinal.domain.Employee;
 
 public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
 
-}
+}	
