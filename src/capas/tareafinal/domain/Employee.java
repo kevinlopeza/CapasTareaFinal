@@ -36,6 +36,10 @@ public class Employee {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "sucursal_id")
 	private Store store;
+	
+	public Employee() {
+		
+	}
 
 	public Employee(Integer code, String name, Integer age, char gender, boolean status, Store store) {
 		super();

@@ -9,4 +9,8 @@ import capas.tareafinal.domain.Store;
 public interface SucursalService {
 
 	public List<Store> fetchAllStores() throws DataAccessException;
+
+	public Store findOne(Integer code) throws DataAccessException;
+
+	public void deleteStore(Integer code) throws DataAccessException;
 }

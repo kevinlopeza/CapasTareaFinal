@@ -12,6 +12,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -41,6 +42,13 @@
 </div>
 
 <div class="divprincipal" align ="center">
+			<c:if test = "${not empty message}">
+				<div class="alert">
+  				<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  				<strong> ${message} </strong> 
+			</div>
+			</c:if>
+		
 		    <table class = "table">
 	    	<thead class ="thread-light">
 	    		<tr>
@@ -50,6 +58,7 @@
 	    			<th>Cantidad de mesas</th>
 	    			<th>Gerente</th>
 	    			<th>Horarios</th>
+	    			<th>Opciones</th>
 	    		</tr>
 	    	</thead>
 	    	<tbody>
@@ -61,6 +70,11 @@
 	                <td>${store.numTables}</td>
 	                <td>${store.manager}</td>
 	                <td>${store.schedule}</td>
+	                <td>
+	                	<button class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/store/${store.code}'"><i class="fa fa-binoculars"></i>Ver</button>
+						<button class="btn btn-secondary" onclick="window.location.href='${pageContext.request.contextPath}/store/edit/${store.code}'"><i class="fa fa-edit"></i>Editar</button>
+						<button class="btn btn-success" onclick="window.location.href='${pageContext.request.contextPath}/store/delete/${store.code}'"><i class="fa fa-trash"></i>Eliminar</button>
+	                </td>
 	                </tr>
 	    		</c:forEach>
 	    	</tbody>

@@ -10,4 +10,7 @@ import capas.tareafinal.domain.Store;
 public interface SucursalRepository extends JpaRepository<Store, Integer>{
 
 	public List<Store> findAll();
+	
+	public Store getOne(Integer code);
+	
 }
