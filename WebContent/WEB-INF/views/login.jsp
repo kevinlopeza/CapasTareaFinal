@@ -22,7 +22,7 @@
   </div>
 </div>
 
-<h1 name="errorMessage"></h1>
+
 
 </body>
 </html>

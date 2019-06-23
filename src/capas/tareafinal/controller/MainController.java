@@ -1,7 +1,6 @@
 package capas.tareafinal.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,20 +22,21 @@ public class MainController {
 	}
 
 	@PostMapping("/verify")
-	public ModelAndView verifyCredendentials(@RequestParam String username, @RequestParam String password){
-		
-		ModelAndView mav = new ModelAndView("login");
-		
-		userService.verifyCredentials(username, password);
-		User user = null;
+	public ModelAndView login(@RequestParam(value = "username") String username, @RequestParam(value = "password") String password) {
+		ModelAndView mav = new ModelAndView();
 		try {
-			user = userService.verifyCredentials(username, password);
-		} catch(DataAccessException e) {	
-			mav.addObject("error", "Not able to fetch book list");
+			User user  = userService.verifyCredentials(username, password);
+			if (user != null) {
+				return new ModelAndView("redirect:/sucursales","user",user);
+			} else {
+				mav.setViewName("login");
+				mav.addObject("error", "Credenciales incorrectas");
+			}
 		}
-		String errorMessage = "Not able to verify credentials";
-		mav.addObject("error",errorMessage);
+		catch(Exception e) {
+			mav.addObject("error","Algo salió mal - No se pudo conectar");
+			e.printStackTrace();
+		}
 		return mav;
 	}
-	
 }
