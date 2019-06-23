@@ -31,7 +31,6 @@
   </div>
   
   
-  
     <img src="${pageContext.request.contextPath}/resources/chef.png" width="300px" height="300px">
     
   

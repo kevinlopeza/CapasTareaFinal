@@ -1,1 +1,11 @@
-@charset "UTF-8";
+
+.divprincipal {
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+
+.jumbotron {
+    background-color:#C9EAF3 !important; 
+}
