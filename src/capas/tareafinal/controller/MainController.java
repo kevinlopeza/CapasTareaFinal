@@ -30,11 +30,11 @@ public class MainController {
 				return new ModelAndView("redirect:/sucursales","user",user);
 			} else {
 				mav.setViewName("login");
-				mav.addObject("error", "Credenciales incorrectas");
+				mav.addObject("error", "Datos incorrectos. Intente de nuevo.");
 			}
 		}
 		catch(Exception e) {
-			mav.addObject("error","Algo salió mal - No se pudo conectar");
+			mav.addObject("error","Not able to fetch users");
 			e.printStackTrace();
 		}
 		return mav;
