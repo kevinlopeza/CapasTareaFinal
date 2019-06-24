@@ -1,6 +1,6 @@
 # PNC: Tarea final
 
-Aplicación para consultar registros de biblioteca, desarrollada utilizando Spring MVC, JSTL, JPA e Hibernate. 
+Aplicación para consultar registros de biblioteca, desarrollada utilizando Spring MVC, JSTL, JPA, Hibernate y SpringData. 
 
 Este repositorio contiene el backup para la base de datos de pruebas, con los siguientes detalles:
 
