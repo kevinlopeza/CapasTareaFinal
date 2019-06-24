@@ -7,7 +7,7 @@
 <head>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/style1.css">
 	<meta charset="UTF-8">
-	<title>Bienvenido</title>
+	<title>Inicie sesión</title>
 </head>
 
 <body>
