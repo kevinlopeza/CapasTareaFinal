@@ -28,7 +28,7 @@
 			<h2> ${action} sucursal </h2>
 			<form:form action="${pageContext.request.contextPath}/save" method="POST" modelAttribute="store" autocomplete="off">
 				<form:input type="hidden" name="code" path="code"/>
-				<div class="input-field col s12">
+				<div class="input-field">
 				    <label for="name">Nombre</label>
 				    <form:input id="name" type="text" name="name" path="name"/>
 				    <form:errors path="name" cssStyle="color:red;"/>
@@ -53,16 +53,14 @@
 				    <form:input id="gerente" type="text" name="manager" path="manager"/>
 				    <form:errors path="manager" cssStyle="color:red;"/>
 				</div>
-				<button type="submit">Guardar</button>
+				<button type="submit"><i class="fa fa-save"></i>     Guardar</button>
 				<br>
 				<br>
 			</form:form>
 			<form action="${pageContext.request.contextPath}/sucursales" method="post">
-					<button type="submit" >Regresar</button>
+					<button type="submit" ><i class="fa fa-arrow-left"></i>    Regresar</button>
 				</form>
 		</div>
-	 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.4.1.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/materialize.min.js"></script>
-
+	
 </body>
 </html>

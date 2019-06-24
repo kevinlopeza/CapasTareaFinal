@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -87,5 +88,18 @@ public class SucursalController {
 			e.printStackTrace();
 		}
 		return rv;
+	}
+	
+	@RequestMapping("/store/edit/{id}")
+	public String editStore(@PathVariable("id") Integer code, Model m){
+		try {
+			Store store = sucService.findOne(code);
+			m.addAttribute("action", "Editar");
+			m.addAttribute("store", store);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		return "addStore";
 	}
 }

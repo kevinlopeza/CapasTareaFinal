@@ -12,6 +12,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(schema = "public", name = "sucursal")
@@ -23,18 +26,24 @@ public class Store {
 	@Column(name = "codigo")
 	private Integer code;
 	
+	@NotBlank(message="El nombre es un campo obligatorio")
 	@Column(name = "nombre")
 	private String name;
 	
+	@NotBlank(message="La ubicación es un campo obligatorio ")
 	@Column(name = "ubicacion")
 	private String address;
 	
+	@Min(5)
+	@NotNull
 	@Column(name = "cantidad_mesas")
 	private Integer numTables;
 	
+	@NotBlank(message="Debe proporcionr el nombre del gerente")
 	@Column(name = "gerente")
 	private String manager;
 	
+	@NotBlank(message="Debe proporcionar los horarios")
 	@Column(name = "horarios")
 	private String schedule;
 	
