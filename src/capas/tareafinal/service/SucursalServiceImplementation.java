@@ -32,4 +32,9 @@ public class SucursalServiceImplementation implements SucursalService{
 		Store store = findOne(code);
 		sucRepository.delete(store);
 	}
+
+	@Override
+	public void save(Store store) throws DataAccessException {
+		sucRepository.save(store);
+	}
 }

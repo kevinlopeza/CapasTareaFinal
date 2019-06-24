@@ -13,4 +13,6 @@ public interface SucursalService {
 	public Store findOne(Integer code) throws DataAccessException;
 
 	public void deleteStore(Integer code) throws DataAccessException;
+
+	public void save(Store store) throws DataAccessException;
 }

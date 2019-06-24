@@ -33,7 +33,10 @@
     <div class="col-sm">
       <img width="200px" height="200px" src="${pageContext.request.contextPath}/resources/pizza.png">
     </div>
+
   	</div>
+	
+      <button type="button" class="btn btn-info" onclick="window.location.href='${pageContext.request.contextPath}/add'"><i class="fa fa-plus"></i>Añadir sucursal</button>
     
     <div class="container">
 </div>
