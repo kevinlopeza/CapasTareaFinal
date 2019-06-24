@@ -63,12 +63,12 @@ public class SucursalController {
 				sucService.save(store);
 				RedirectView rv = new RedirectView(req.getContextPath()+"/sucursales");
 				rv.setExposeModelAttributes(false);
-				ra.addFlashAttribute("message", "Nueva sucursal registrada");	
+				ra.addFlashAttribute("message", "Cambios realizados con éxito.");	
 				mav.setView(rv);
 			}
 			catch(Exception e) {
 				mav.addObject("action", store.getCode() == null ? "Agregar":"Editar");
-				mav.addObject("message", "Oops. No se pudo guardar la sucursal.");
+				mav.addObject("message", "Oops. No se pudieron realizar los cambios.");
 				mav.setViewName("addStore");
 				e.printStackTrace();
 			}

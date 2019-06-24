@@ -24,7 +24,7 @@ public class SucursalServiceImplementation implements SucursalService{
 
 	@Override
 	public Store findOne(Integer code) throws DataAccessException {
-		return sucRepository.getOne(code);
+		return sucRepository.findById(code).get();
 	}
 
 	@Override
