@@ -2,16 +2,6 @@
 
 Aplicación para uso interno de un restaurante, desarrollada utilizando Spring MVC, JSTL, JPA, Hibernate y SpringData. 
 
-Este repositorio contiene el backup para la base de datos de pruebas, con los siguientes detalles:
-
-> Nombre: tareaNCapas  
-> Usuario: postgres  
-> Contraseña: sin contraseña  
-
-Para inciar sesión, utilice las siguientes credenciales:
-
-> Usuario: admin  
-> Contraseña: admin
 
 ![login.jsp](/imgs/img1.png)
 
